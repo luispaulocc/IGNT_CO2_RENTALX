@@ -1,8 +1,8 @@
-import { Specification } from "../model/Specification";
+import { Specification } from "../../model/Specification";
 import {
     ICreateSpecificationDTO,
     ISpecificationRepository,
-} from "./ISpecificationRepository";
+} from "../ISpecificationRepository";
 
 class SpecificationRepository implements ISpecificationRepository {
     private specifications: Specification[];
@@ -27,7 +27,7 @@ class SpecificationRepository implements ISpecificationRepository {
         return this.specifications;
     }
 
-    findByName(name: string) {
+    findByName(name: string): Specification {
         const specification = this.specifications.find(
             (specification) => specification.name === name
         );
